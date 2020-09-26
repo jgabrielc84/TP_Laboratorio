@@ -11,15 +11,15 @@ public class LoginMapper {
         this.loginDao = loginDao;
     }
 
-    public void setLoginDao(LoginDao loginDao){
+    public void setLoginDao(LoginDao loginDao) {
         this.loginDao = loginDao;
     }
 
-    public LoginDao getLoginDao(){
+    public LoginDao getLoginDao() {
         return loginDao;
     }
 
-    public Boolean checkUserPassword(Login login){
+    public Boolean checkUserPassword(Login login) {
         return loginDao.checkUserPassword(login);
     }
 }
