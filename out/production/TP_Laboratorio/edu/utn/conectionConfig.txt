@@ -1,0 +1,4 @@
+motty.db.elephantsql.com
+5432
+blbsrfxt
+5_Ma1-9OcPcV9DwKSWeOAeHWxiLNL84S

@@ -1,6 +1,7 @@
 package edu.utn;
 
 import edu.utn.dao.LoginDao;
+import edu.utn.entity.DBConnection;
 //import edu.utn.dao.UserDao;
 import edu.utn.entity.Login;
 //import edu.utn.entity.User;
@@ -12,23 +13,23 @@ import edu.utn.mapper.LoginMapper;
 public class Main {
     public static void main(String[] args) {
 
-        LoginDao loginDao = new LoginDao();
-        LoginMapper loginMapper = new LoginMapper(loginDao);
-        LoginManager loginManager = new LoginManager(loginMapper);
+        // LoginDao loginDao = new LoginDao();
+        // LoginMapper loginMapper = new LoginMapper(loginDao);
+        // LoginManager loginManager = new LoginManager(loginMapper);
 
         
-        Login login = new Login();
-        login.setUser("Gabriel");
-        login.setPassword("Chavez");
+        // Login login = new Login("Gabriel", "Chavez");
+        
+        // Boolean loginSucces = loginManager.checkUserPassword(login);
 
-        Boolean loginSucces = loginManager.checkUserPassword(login);
-
-        if(loginSucces){
-            System.out.println("Goooool");
-        }else{
-            System.out.println("Ups");
-        }
-
+        // if(loginSucces){
+        //     System.out.println("Bien hecho");
+        // }else{
+        //     System.out.println("Ups, algo salió mal");
+        // }
+        
+        
+        DBConnection.getDBConnection();
 
 
         // UserDao userDao = new UserDao();
