@@ -1,17 +1,17 @@
 package edu.utn.manager;
 
 import edu.utn.entity.User;
+import edu.utn.mapper.UserMapper;
 
 public class UserManager {
 
-    private User user;
+    UserMapper userMapper;
 
+    public UserManager(){
 
-    public User getUser() {
-        return user;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public boolean save(User user){
+        return userMapper.save(user);
     }
 }
