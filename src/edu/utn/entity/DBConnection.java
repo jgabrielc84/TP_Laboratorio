@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.sql.*;
+import javax.swing.JOptionPane;
 
 
 public class DBConnection {
@@ -12,7 +13,7 @@ public class DBConnection {
     private static Connection dbConnection;
     private static String dbHost;
     private static String dbPort;
-    private static String url = "";
+    private static String url;
     private static String user;
     private static String password;
 
@@ -69,10 +70,11 @@ public class DBConnection {
             if (dbConnection == null) {
                 fillAttributes();
                 dbConnection = DriverManager.getConnection(getUrl(), getUser(), getPassword());
+                JOptionPane.showMessageDialog(null, "Base de datos conectada con exito."); //BORRAR
             }
         }catch(Exception e){
             e.printStackTrace();
-
+            JOptionPane.showMessageDialog(null, "Error al conectar " + e); //BORRAR
         }
 
         return dbConnection;
