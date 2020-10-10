@@ -14,7 +14,7 @@ public class LoginDao {
         
         //Connection connection = DBConnection.getDBConnection();
         
-        return false;
+        return true;
     }
     
 }

@@ -1,14 +1,15 @@
 package edu.utn.manager;
 
 import edu.utn.entity.Login;
+import edu.utn.factory.FactoryMapper;
 import edu.utn.mapper.LoginMapper;
 
 public class LoginManager {
 
     private LoginMapper loginMapper;
 
-    public LoginManager(LoginMapper loginMapper) {
-        this.setLoginMapper(loginMapper);
+    public LoginManager() {
+        this.loginMapper = FactoryMapper.getLoginMapper();;
     }
 
     public LoginMapper getLoginMapper() {

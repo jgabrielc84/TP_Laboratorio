@@ -13,7 +13,7 @@ public class DBConnection {
     private static Connection dbConnection;
     private static String dbHost;
     private static String dbPort;
-    private static String url;
+    private static String url = "";
     private static String user;
     private static String password;
 
@@ -53,9 +53,8 @@ public class DBConnection {
     }
 
     private static void setUrl() {
-        String constructUrl = "";
-        DBConnection.url = constructUrl.concat("jdbc:postgresql://").concat(DBConnection.getDBHost()).concat(":").concat(DBConnection.getDbPort()).concat("/");         // se puede mejorar??
-        // DBConnection.url.concat(DBConnection.getDBHost());                                                                                                           // como queda mejor??
+        DBConnection.url = url.concat("jdbc:postgresql://").concat(DBConnection.getDBHost()).concat(":").concat(DBConnection.getDbPort()).concat("/");         // se puede mejorar??
+        // DBConnection.url.concat(DBConnection.getDBHost());                                                                                                  // como queda mejor??
         // DBConnection.url.concat(":");
         // DBConnection.url.concat(DBConnection.getDbPort());
         // DBConnection.url.concat("/");
@@ -70,6 +69,7 @@ public class DBConnection {
             if (dbConnection == null) {
                 fillAttributes();
                 dbConnection = DriverManager.getConnection(getUrl(), getUser(), getPassword());
+                System.out.println(url);
                 JOptionPane.showMessageDialog(null, "Base de datos conectada con exito."); //BORRAR
             }
         }catch(Exception e){
@@ -93,9 +93,7 @@ public class DBConnection {
     
     private static void closeFile(FileReader fr){
         try{                    
-            if( null != fr ){   
-                fr.close();     
-            }                  
+            fr.close();                
         }catch (Exception e){ 
             e.printStackTrace();
         }
