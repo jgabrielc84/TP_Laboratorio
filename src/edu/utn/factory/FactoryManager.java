@@ -9,8 +9,8 @@ public class FactoryManager {
         return new LoginManager();
     }
  
-    // public static UserManager getUserManager(){
-    //     return new UserManager();
-    // }
+    public static UserManager getUserManager(){
+        return new UserManager();
+    }
 
 }

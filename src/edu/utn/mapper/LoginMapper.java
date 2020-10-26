@@ -21,7 +21,7 @@ public class LoginMapper {
         return loginDao;
     }
 
-    public Boolean checkUserPassword(Login login) {
+    public Login checkUserPassword(Login login) {
         return loginDao.checkUserPassword(login);
     }
 }

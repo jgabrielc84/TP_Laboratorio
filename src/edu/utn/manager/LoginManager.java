@@ -9,7 +9,7 @@ public class LoginManager {
     private LoginMapper loginMapper;
 
     public LoginManager() {
-        this.loginMapper = FactoryMapper.getLoginMapper();;
+        this.loginMapper = FactoryMapper.getLoginMapper();
     }
 
     public LoginMapper getLoginMapper() {
@@ -20,7 +20,7 @@ public class LoginManager {
         this.loginMapper = loginMapper;
     }
 
-    public Boolean checkUserPassword(Login login) {
+    public Login checkUserPassword(Login login) {
         return loginMapper.checkUserPassword(login);
     }
 }
