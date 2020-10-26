@@ -1,18 +1,18 @@
 package edu.utn.manager;
 
 import edu.utn.entity.User;
+import edu.utn.factory.FactoryMapper;
 import edu.utn.mapper.UserMapper;
 
 public class UserManager {
 
-    UserMapper userMapper;
+    private UserMapper userMapper;
 
-    public UserManager(UserMapper userMapper){
-        this.userMapper = userMapper;
+    public UserManager(){
+        this.userMapper = FactoryMapper.getUserMapper();
     }
 
-    public boolean save(User user){
-        //return userMapper.save(user);
-        return true;
+    public int save(User user){
+        return userMapper.save(user);
     }
 }
